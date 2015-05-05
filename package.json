@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "express": "^4.11.1",
-    "sendgrid": "^1.7.0"
+    "sendgrid": "^1.7.0",
+    "hjs": "~0.0.6"
   },
   "devDependencies": {}
 }
