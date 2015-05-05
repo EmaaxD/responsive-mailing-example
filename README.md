@@ -34,11 +34,9 @@ De forma opcional, podemos instalar:
 
 
 <br />
-## ¿Qué voy a encontrar?
+## TO-DO
 
+- ¿Qué voy a encontrar?
 
-
-<br />
-## ¿Cómo probar el ejemplo?
-
+- ¿Cómo utilizar el ejemplo?
 
