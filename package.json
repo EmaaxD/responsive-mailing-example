@@ -1,0 +1,28 @@
+{
+  "name": "responsive_emails_nodejs_service",
+  "version": "0.1.0",
+  "description": "Servicio de envío de emails 'responsive' con NodeJS",
+  "main": "app/app.js",
+  "bugs": {
+    "url": "https://github.com/koldohernandez/responsive_emails_nodejs_service/issues",
+    "email": "info@koldohernandez.com"
+  },
+  "author": {
+    "name": "Koldo Hernández",
+    "email": "info@koldohernandez.com",
+    "url": "http://koldohernandez.com"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/koldohernandez/responsive_emails_nodejs_service/blob/master/LICENSE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koldohernandez/responsive_emails_nodejs_service/"
+  },
+  "dependencies": {
+    "express": "^4.11.1",
+    "sendgrid": "^1.7.0"
+  },
+  "devDependencies": {}
+}
