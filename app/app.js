@@ -17,7 +17,7 @@ app.get("/", function(req, res) {
 app.get('/send', function(req, res) {
   
   var opcionesMail = {
-    to:       'koldo.hm@kimetsport.com',
+    to:       'info@koldohernandez.com',
     from:     conf.email.from,
     subject:  'Hola!',
     text:     'Este es mi primer email desde SendGrid.'
