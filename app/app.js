@@ -7,7 +7,6 @@ var conf = require('./config').config();
 
 var sendgrid  = require('sendgrid')(conf.email.key);
 
-
 // Home
 app.get("/", function(req, res) {
 	res.send("Bienvenido a mi página");
