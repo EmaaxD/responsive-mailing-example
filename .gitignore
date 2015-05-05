@@ -3,5 +3,6 @@ typings
 npm-debug.log
 .DS_Store
 *.sublime-*
+.settings
 tut-*.md
 tut-*.png
