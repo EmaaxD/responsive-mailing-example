@@ -34,11 +34,12 @@ Para instalarlo ejecutamos:
 	$ > tsd install express
 	
 
-> Nota: este apartado es totalmente opcional. En caso de no querer utiliar estas referencias o no estar usando Visual Studio Code, debemos eliminar estas líneas del fichero `app/app.js`:
+> Nota: este apartado es totalmente opcional. En caso de no querer utilizar estas referencias o no estar usando Visual Studio Code, debemos eliminar estas líneas del fichero `app/app.js`:
 > 
 > 
-> `/// <reference path="../typings/node/node.d.ts"/`
-> `/// <reference path="../typings/express/express.d.ts"/`
+>   `/// <reference path="../typings/node/node.d.ts"/`
+> 
+>   `/// <reference path="../typings/express/express.d.ts"/`
 
 
 ## Cómo instalarlo
@@ -47,30 +48,49 @@ Para instalar el ejemplo, tenemos que:
 
 - Crear la carpeta donde albergar el proyecto:
 	
-	$ > cd <root_apps_node>
+		$ > cd <root_apps_node>
  
-	$ > sudo mkdir ./responsive-emails-service
+		$ > sudo mkdir ./responsive-emails-service
 
 - Clonar el proyecto del repositorio
 	
-	$ > cd responsive-emails-service
+		$ > cd responsive-emails-service
 
-	$ > git clone https://github.com/koldohernandez/responsive-emails-nodejs-service.git .
+		$ > git clone https://github.com/koldohernandez/responsive-emails-nodejs-service.git .
 
 - Instalar las dependencias del proyecto
 
-	$ > npm install
+		$ > npm install
 
 En caso de que tengas instalado *TSD package manager*, debes 
 
 
+## Configuración básica
+
+Para configurar el ejemplo, debes repasar los siguientes aspectos:
+
+- Configurar las variables del fichero `env.json`:
+
+	- `host`: puerto por el que quieres que *escuche* la aplicación. Por defecto, el 8082.
+	
+	- `email.key`: tu clave de uso de la API de Sendgrid.
+
+- Destinatario del mensaje en el fichero `app/app.js`: como esto es un ejemplo, he puesto mi email. Cambia el destinatario `info@koldohernandez.com` por el tuyo.
+
+
 ## Cómo utilizarlo
 
-Para probar este código, sólo tienes que:
-
-- Arrancar tu servidor de node
+Para probar este código, sólo tienes que arrancar tu servidor de node:
 
 	$ > cd <root_apps_node>/responsive-emails-service
 
 	$ > node app/app.js
 
+
+Una vez hecho, sólo tienes que acceder a la URL:
+
+- `http://localhost:8082`: el resultado es un texto de Bienvenida.
+
+- `http://localhost:8082/preview`: como resultado obtienes la vista previa del email que se va a enviar.
+
+- `http://localhost:8082/send`: envía el email al destinatario y muestra un mensaje.
