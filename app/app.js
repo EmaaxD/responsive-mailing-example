@@ -34,7 +34,12 @@ var compiledTemplate = hogan.compile(template);
 // -------
 // Home
 app.get("/", function(req, res) {
-	res.send("Bienvenido a mi página");
+  
+  var strHello = "<h1>Bienvenido al ejemplo</h1>";
+  strHello += "<p><a href='/preview'>Preview email</a>.</p>";
+  strHello += "<p><a href='/send'>Send email</a>.</p>";
+  
+	res.send(strHello);
 });
   
 // Enviar email
@@ -44,14 +49,26 @@ app.get('/send', function(req, res) {
     to:       'info@koldohernandez.com',
     from:     conf.email.from,
     subject:  'Hola!',
-    html:     compiledTemplate.render({firsName: 'Konelin'})
+    html:     compiledTemplate.render({firsName: 'Koldo'})
   };
   
   sendgrid.send(opcionesMail, function(err, json) {
-    if (err) { return console.error(err); }
-    console.log(json);
     
-    res.send("Email enviado correctamente");
+    var strRdo = "";
+    if (err) {
+       
+      strRdo = "<p>Se ha producido un error:</p>";
+      strRdo += "<p>" + err + "</p>";
+
+    } else  {
+      
+      strRdo = "<p>Email enviado correctamente.</p>";
+    
+    }
+    
+    strRdo += "<p><a href='/'>Volver</a></p>";
+    
+    res.send(strRdo);
   });
   
 });
@@ -59,7 +76,7 @@ app.get('/send', function(req, res) {
 
 // Preview
 app.get('/preview', function(req, res) {
-  res.render('email', {firsName: 'Konelin'});
+  res.render('email', {firsName: 'Koldo'});
 });
 
 
