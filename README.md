@@ -12,7 +12,7 @@ Lo único que necesitamos es tener instalado:
 
 - [NodeJS y npm](http://nodejs.org/) 
 
-- [Hogan.js]()
+- [Hogan.js](http://twitter.github.io/hogan.js/)
 
 		$ > npm install -s hogan.js
 
