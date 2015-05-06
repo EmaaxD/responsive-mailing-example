@@ -26,12 +26,6 @@ Además, de forma opcional, el código de este ejemplo utiliza referencias al m�
 Para instalarlo ejecutamos:
 
 	$ > npm install tsd@next -g
-
-, para obtener las librerías de definición de datos de NodeJS y ExpressJS ejecutamos:
-
-	$ > tsd install node
-
-	$ > tsd install express
 	
 
 > Nota: este apartado es totalmente opcional. En caso de no querer utilizar estas referencias o no estar usando Visual Studio Code, debemos eliminar estas líneas del fichero `app/app.js`:
@@ -62,7 +56,11 @@ Para instalar el ejemplo, tenemos que:
 
 		$ > npm install
 
-En caso de que tengas instalado *TSD package manager*, debes 
+*Opcional*: En caso de que tengas instalado *TSD package manager* y quieras utilizar las librerías de definición de Typescript para NodeJS y ExpressJS, debes ejecutar lo siguiente:
+
+	$ > tsd install node
+
+	$ > tsd install express
 
 
 ## Configuración básica
