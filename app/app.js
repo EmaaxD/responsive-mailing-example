@@ -49,7 +49,7 @@ app.get('/send', function(req, res) {
     to:       'info@koldohernandez.com',
     from:     conf.email.from,
     subject:  'Hola!',
-    html:     compiledTemplate.render({firsName: 'Koldo'})
+    html:     compiledTemplate.render({firstName: 'Koldo'})
   };
   
   sendgrid.send(opcionesMail, function(err, json) {
@@ -76,7 +76,7 @@ app.get('/send', function(req, res) {
 
 // Preview
 app.get('/preview', function(req, res) {
-  res.render('email', {firsName: 'Koldo'});
+  res.render('email', {firstName: 'Koldo'});
 });
 
 
