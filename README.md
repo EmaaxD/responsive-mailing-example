@@ -4,7 +4,6 @@ Este repositorio contiene un ejemplo sobre cómo enviar emails *responsive* util
 
 En breve publicaré un post detallado explicando el funcionamiento y forma de uso de éste ejemplo. 
 
-> NOTA IMPORTANTE: este repositorio se encuentra en fase de desarrollo por lo que de momento no es la versión definitiva del mismo.
 
 ## Pre-requisitos
 
