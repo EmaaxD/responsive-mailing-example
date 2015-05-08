@@ -4,15 +4,17 @@
 
 //  MÓDULOS NECESARIOS
 // --------------------
-var express = require('express');
+var app = require('express')();
 var path = require('path');
-var app = express();
-var conf = require('./config').config();
-
-var sendgrid  = require('sendgrid')(conf.email.key);
-
 var hogan = require('hogan.js');
 var fs = require('fs');
+
+// Configuración de la aplicación
+var conf = require('./config').config();
+
+// Sendgrid
+var sendgrid  = require('sendgrid')(conf.email.key);
+
 
 
 
@@ -78,6 +80,7 @@ app.get('/send', function(req, res) {
 app.get('/preview', function(req, res) {
   res.render('email', {firstName: 'Koldo'});
 });
+
 
 
 
