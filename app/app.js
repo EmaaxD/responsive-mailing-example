@@ -47,8 +47,16 @@ app.get("/", function(req, res) {
 // Enviar email
 app.get('/send', function(req, res) {
   
+  //
+  // NOTA: PON EL DESTINATATIO DEL EMAIL AQUI
+  //
+  var  receiver = 'hola@mi_dominio.com';
+  //
+  //
+  //
+  
   var opcionesMail = {
-    to:       'info@koldohernandez.com',
+    to:       receiver,
     from:     conf.email.from,
     subject:  'Hola!',
     html:     compiledTemplate.render({firstName: 'Koldo'})
@@ -56,21 +64,21 @@ app.get('/send', function(req, res) {
   
   sendgrid.send(opcionesMail, function(err, json) {
     
-    var strRdo = "";
+    var result = "";
     if (err) {
        
-      strRdo = "<p>Se ha producido un error:</p>";
-      strRdo += "<p>" + err + "</p>";
+      result = "<p>Se ha producido un error: </p>";
+      result += "<p>" + err + "</p>";
 
     } else  {
       
-      strRdo = "<p>Email enviado correctamente.</p>";
+      result = "<p>Email enviado correctamente.</p>";
     
     }
     
-    strRdo += "<p><a href='/'>Volver</a></p>";
+    result += "<p><a href='/'>Volver</a></p>";
     
-    res.send(strRdo);
+    res.send(result);
   });
   
 });
