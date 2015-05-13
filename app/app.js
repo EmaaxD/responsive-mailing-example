@@ -47,7 +47,7 @@ app.get('/send', function(req, res) {
   /* 
     NOTA: PON EL DESTINATATIO DEL EMAIL AQUI
   */
-  var  receiver = 'info@koldohernandez.com';
+  var  receiver = 'hola@mi_dominio.com';
   
   var mailConfig = {
     to:       receiver,
