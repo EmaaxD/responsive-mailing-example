@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+
+  <title>Ejemplo Responsive mailing con NodeJS y Sendgrid</title>
+  <meta name="description" content="Respnsive mailing">
+  <meta name="author" content="Koldo Hernández">
+
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	<h1>{{ titulo }}</h1>
+  <p>{{ texto }}</p>
+</body>
+</html>

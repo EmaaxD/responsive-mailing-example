@@ -37,48 +37,37 @@ var compiledTemplate = hogan.compile(template);
 // Home
 app.get("/", function(req, res) {
   
-  var strHello = "<h1>Bienvenido al ejemplo</h1>";
-  strHello += "<p><a href='/preview'>Preview email</a>.</p>";
-  strHello += "<p><a href='/send'>Send email</a>.</p>";
+  res.render('index');
   
-	res.send(strHello);
 });
   
 // Enviar email
 app.get('/send', function(req, res) {
   
-  //
-  // NOTA: PON EL DESTINATATIO DEL EMAIL AQUI
-  //
-  var  receiver = 'hola@mi_dominio.com';
-  //
-  //
-  //
+  /* 
+    NOTA: PON EL DESTINATATIO DEL EMAIL AQUI
+  */
+  var  receiver = 'info@koldohernandez.com';
   
-  var opcionesMail = {
+  var mailConfig = {
     to:       receiver,
     from:     conf.email.from,
     subject:  'Hola!',
     html:     compiledTemplate.render({firstName: 'Koldo'})
   };
   
-  sendgrid.send(opcionesMail, function(err, json) {
+  sendgrid.send(mailConfig, function(err, json) {
     
-    var result = "";
+    var titulo = 'Email enviado correctamente';
+    var texto = 'El email se ha enviado a la siguiente dirección: ' + receiver;
+    
     if (err) {
-       
-      result = "<p>Se ha producido un error: </p>";
-      result += "<p>" + err + "</p>";
-
-    } else  {
-      
-      result = "<p>Email enviado correctamente.</p>";
-    
+      titulo = 'Se ha producido un error';
+      texto = err;
     }
     
-    result += "<p><a href='/'>Volver</a></p>";
+    res.render('page', {titulo: titulo, texto: texto});
     
-    res.send(result);
   });
   
 });
